@@ -5,7 +5,7 @@
   height: 100%;
   flex: 0 0 40px;
   border: 1px solid $buttons-border-gray;
-  background-image: url('./assets/img/icons/Favourites-Heart.svg');
+  background-image: url('../assets/img/icons/Favourites-Heart.svg');
   background-repeat: no-repeat;
   background-size: 16px;
   background-position: center;
@@ -16,7 +16,7 @@
   }
 
   &._added {
-    background-image: url('./assets/img/icons/Favourites-Heart-Filled.svg');
+    background-image: url('../assets/img/icons/Favourites-Heart-Filled.svg');
     border-color: $border-color;
   }
 }
