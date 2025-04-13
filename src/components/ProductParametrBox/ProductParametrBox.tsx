@@ -23,7 +23,7 @@ export const ProductParametrBox: React.FC<Props> = ({
   const currentLink = (value: string) => {
     let result = `/${currentProduct.category}/${currentProduct.namespaceId}-`;
 
-    if (!!+value.slice(0, 1)) {
+    if (+value.slice(0, 1)) {
       result =
         result +
         `${value.toLowerCase()}-${currentProduct.color.toLowerCase().replace(/ /g, '-')}`;
@@ -38,7 +38,7 @@ export const ProductParametrBox: React.FC<Props> = ({
 
   switch (parametr) {
     case 'color':
-      values = currentProduct.colorsAvailable;
+      values = [...currentProduct.colorsAvailable].sort((a, b) => a.localeCompare(b));
       break;
     case 'capacity':
       values = currentProduct.capacityAvailable;
@@ -56,15 +56,17 @@ export const ProductParametrBox: React.FC<Props> = ({
           key={index}
           to={currentLink(value)}
           className={classNames(
-            `product-parametr-box__link product-parametr-box__link-${parametr} product-parametr-box__link-${parametr}--${value}`,
+            `product-parametr-box__link product-parametr-box__link-${parametr} product-parametr-box__link-${parametr}--${value
+              .toLowerCase()
+              .replace(/[\s-]/g, "")}`,
             {
               _active:
                 currentProduct[parametr as keyof typeof currentProduct] ===
                 value,
-            },
+            }
           )}
         >
-          {parametr !== 'color' && value}
+          {parametr !== "color" && value}
         </Link>
       ))}
     </div>

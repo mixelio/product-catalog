@@ -3,13 +3,11 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { CatalogContext } from '../../CatalogContext';
 import { GetCurrentProduct } from '../../utils/GetCurrentProduct';
-// eslint-disable-next-line
 import { ProductParametrBox } from '../../components/ProductParametrBox/ProductParametrBox';
 import { ImageGalery } from '../../components/ImageGalery/ImageGalery';
 import { Price } from '../../components/Price/Price';
 import { ProductButtons } from '../../components/ProductButtons/ProductButtons';
 import { ProductInfo } from '../../components/ProductInfo/ProductInfo';
-// eslint-disable-next-line
 import { ProductSliderButtons } from '../../components/ProductSliderButtons/ProductSliderButtons';
 import { ProductSlider } from '../../components/ProductSlider/ProductSlider';
 import { CurrentPath } from '../../components/CurrentPath/CurrentPath';
@@ -32,7 +30,6 @@ export const ProductPage: React.FC = () => {
   const currentProduct = GetCurrentProduct(
     uniqueProductFromServer?.find(item => item.id === itemId),
   );
-  // eslint-disable-next-line
   const [currentTypeProducts, setCurrentTypeProducts] = useState<Phone[] | Tablet[] | Accessory[]>([]);
 
   useEffect(() => {
@@ -62,6 +59,7 @@ export const ProductPage: React.FC = () => {
         );
         break;
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
