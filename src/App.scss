@@ -1,8 +1,10 @@
+@use './assets/styles/utils/vars' as *;
+@use './assets/styles/utils/mixins' as *;
+
 @import './assets/styles/utils/nullstyle';
 @import 'swiper/css';
 @import './assets/styles/utils/fonts';
-@use './assets/styles/utils/vars' as *;
-@use './assets/styles/utils/mixins' as *;
+
 @import './assets/styles/page';
 @import './assets/styles/pages/home';
 @import './pages/ProductPage/ProductPage.module';
