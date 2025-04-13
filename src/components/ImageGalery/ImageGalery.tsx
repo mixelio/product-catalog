@@ -53,7 +53,7 @@ export const ImageGalery: React.FC<Props> = ({ currentProduct }) => {
             key={image || index}
           >
             <img
-              src={`/assets/${image}`}
+              src={`./assets/${image}`}
               alt="main-image"
               className="image-galery__main-image"
             />
@@ -85,7 +85,7 @@ export const ImageGalery: React.FC<Props> = ({ currentProduct }) => {
             style={{ aspectRatio: '1 / 1' }}
           >
             <img
-              src={`/assets/${image}`}
+              src={`./assets/${image}`}
               alt="thumbs-image"
               className="image-galery__thumbs-image"
             />
