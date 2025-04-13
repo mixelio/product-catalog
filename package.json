@@ -1,7 +1,7 @@
 {
   "name": "product-catalog",
   "private": true,
-  "homepage": "/",
+  "homepage": "https://mixelio.github.io/product-catalog/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
