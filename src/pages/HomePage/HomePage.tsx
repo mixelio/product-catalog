@@ -52,7 +52,6 @@ export const HomePage: React.FC = () => {
     if (isTablet) {
       return 2;
     }
-
     return 1;
   };
 
