@@ -1,3 +1,6 @@
+@use "../../assets/styles/utils/vars" as *;
+@use "../../assets/styles/utils/mixins" as *;
+
 .cart-unit {
   padding: 16px;
   border: 1px solid $secondary-gray;

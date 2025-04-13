@@ -1,3 +1,6 @@
+@use "../../assets/styles/utils/vars" as *;
+@use "../../assets/styles/utils/mixins" as *;
+
 .product-parametr-box {
   display: flex;
   align-items: center;

@@ -1,3 +1,6 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+
 .first-screen {
   margin-bottom: 50px;
 

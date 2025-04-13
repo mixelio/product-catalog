@@ -1,3 +1,6 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+
 .title {
   font-family: Mont-Bold, sans-serif;
   font-size: 22px;

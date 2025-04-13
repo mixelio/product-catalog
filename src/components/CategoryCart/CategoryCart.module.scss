@@ -1,3 +1,6 @@
+@use "../../assets/styles/utils/vars" as *;
+@use "../../assets/styles/utils/mixins" as *;
+
 .categories {
   &__title {
     margin-bottom: 24px;

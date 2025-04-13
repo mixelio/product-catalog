@@ -1,3 +1,6 @@
+@use "../../assets/styles/utils/vars" as *;
+@use "../../assets/styles/utils/mixins" as *;
+
 .image-galery {
   @include on-tablet {
     display: flex;

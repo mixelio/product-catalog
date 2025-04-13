@@ -1,3 +1,6 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+
 .arrow-btn {
   display: block;
   border: 1px solid $secondary-gray;
