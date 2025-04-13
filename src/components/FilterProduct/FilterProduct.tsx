@@ -1,15 +1,9 @@
 import { useSearchParams } from 'react-router-dom';
 import { getSearchWith, SearchParams } from '../../utils/searchHelper';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
+import {SortParametr} from './SortParametr';
 
-export enum SortParametr {
-  DEFAULT = 'default',
-  NAME = 'name',
-  DATE = 'newest',
-  PRICE = 'price',
-}
-
-export enum PaginationNumber {
+enum PaginationNumber {
   Eight = '8',
   Twelve = '12',
   Sixteen = '16',
@@ -19,17 +13,17 @@ export enum PaginationNumber {
 export const FilterProduct = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const setSearchWith = (params: SearchParams) => {
+  const setSearchWith = useCallback((params: SearchParams) => {
     const search = getSearchWith(params, searchParams);
-
+    
     setSearchParams(search);
-  };
+  }, [searchParams, setSearchParams]);
 
   const changeOrderParameter = (
     event: React.ChangeEvent<HTMLSelectElement>,
   ): void => {
     setSearchWith({
-      sort: event.target.value as SortParametr,
+      sort: event.target.value,
       page: '1',
     });
   };
@@ -47,6 +41,7 @@ export const FilterProduct = () => {
       perPage: PaginationNumber.Eight,
       page: '1',
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -59,7 +54,10 @@ export const FilterProduct = () => {
           id="sortBySelector"
           className="filter-product__selector"
           defaultValue={SortParametr.DEFAULT}
-          onChange={changeOrderParameter}
+          onChange={(e) => {
+            
+            changeOrderParameter(e)}
+          }
         >
           <option value={SortParametr.DEFAULT}>{SortParametr.DEFAULT}</option>
           <option value={SortParametr.NAME}>{SortParametr.NAME}(a-z)</option>

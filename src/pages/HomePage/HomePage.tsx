@@ -10,7 +10,7 @@ import { ProductSliderButtons } from '../../components/ProductSliderButtons/Prod
 import { useUnique } from '../../utils/useUnique';
 
 export const HomePage: React.FC = () => {
-  const { productsFromServer, hotPrisModels, brandNewModels, loader, setLoader } =
+  const { productsFromServer, hotPrisModels, brandNewModels, loader, setLoader, phonesFromServer } =
     useContext(CatalogContext);
   const [categories, setCategories] = useState<string[]>([]);
   const newModelForShow = [...useUnique(brandNewModels)];
@@ -24,7 +24,7 @@ export const HomePage: React.FC = () => {
         window.scrollTo(0, parseInt(scrollPosition, 10));
       }, 0);
     }
-  }, []);
+  }, [phonesFromServer, productsFromServer]);
 
   useEffect(() => {
     setLoader(true);
@@ -38,6 +38,7 @@ export const HomePage: React.FC = () => {
 
       setCategories(uniqueCategories);
     }
+    
   }, [productsFromServer, setLoader]);
 
   const isTablet = useMediaQuery({ query: '(min-width: 640px)' });

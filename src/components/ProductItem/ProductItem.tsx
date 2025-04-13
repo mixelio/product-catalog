@@ -8,7 +8,7 @@ import { Accessory } from '../../types/Accessory';
 import { AddToCartBtn } from '../AddToCartBtn/AddToCartBtn';
 
 interface ProductItemProps {
-  product: Phone | Tablet | Accessory;
+  product: Phone | Tablet | Accessory | null;
   section: string;
 }
 
@@ -26,7 +26,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
   section,
 }) => {
   const location = useLocation();
-
+  
   const handleLinkClick = () => {
     const scrollPosition = window.scrollY;
 

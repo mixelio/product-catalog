@@ -13,6 +13,8 @@ export const AddToCartBtn: React.FC<Props> = ({ product }) => {
   const { cart, addToCart } = useContext(CatalogContext);
   const isSelected = cart.find(item => item.id === product.id);
 
+  
+
   return (
     <button
       className={classNames('add-to-cart-btn', {

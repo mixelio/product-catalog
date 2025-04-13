@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { CatalogContext } from '../../CatalogContext';
 import { getProductForShow } from '../../pages/CartPage/CartPage';
-import React from 'react';
 
 export const CartTotalSumm = () => {
   const { cart } = useContext(CatalogContext);

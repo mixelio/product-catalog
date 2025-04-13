@@ -5,7 +5,7 @@ import { CatalogContext } from '../../CatalogContext';
 import { GetPoroductsForView } from '../../utils/GetProductsForView';
 import { ProductItem } from '../../components/ProductItem/ProductItem';
 import { FilterProduct } from '../../components/FilterProduct/FilterProduct';
-import { SortParametr } from '../../components/FilterProduct/FilterProduct';
+import {SortParametr} from '../../components/FilterProduct/SortParametr';
 import { Pagination } from '../../components/Pagination/Pagination';
 import { Phone } from '../../types/Phone';
 import { Tablet } from '../../types/Tablet';
